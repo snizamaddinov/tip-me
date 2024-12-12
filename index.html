@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Your Dev</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f4f6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+
+        p {
+            margin: 15px 0;
+            font-size: 16px;
+        }
+
+        .tips {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .tip {
+            background: #2ecc71;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .tip:hover {
+            background: #27ae60;
+        }
+
+        .joke {
+            margin-top: 30px;
+            font-style: italic;
+            color: #7f8c8d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tip Your Dev</h1>
+        <p>It looks like your problem is solved! How about tipping your favorite developer?</p>
+        <div class="tips">
+            <button class="tip" onclick="showJoke(5)">5%</button>
+            <button class="tip" onclick="showJoke(10)">10%</button>
+            <button class="tip" onclick="showJoke(20)">20%</button>
+        </div>
+        <p class="joke" id="joke"></p>
+    </div>
+
+    <script>
+        function showJoke(tip) {
+        const jokes = {
+            5: [
+                "5%? Wow, don't spend it all in one place!",
+                "5%? Big spender alert! The generosity is overwhelming.",
+                "5%? Thank you! I’ll go buy… oh wait, nothing costs that little.",
+                "5%? Guess I’m dining like a broke college student tonight!",
+                "5%? Such a grand gesture, I might just retire early.",
+                "5%? I'll be sure to write your name in the Hall of Meh.",
+                "5%? You're like the friend who brings chips to a potluck… half-empty.",
+                "5%? This will really help me with my imaginary yacht payments!",
+                "5%? So thoughtful! Let me go add it to my pile of pennies."
+            ],
+            10: [
+                "10%? Oh my gosh, you're practically Jeff Bezos!",
+                "10%? I'm overwhelmed. Truly. Please, no more.",
+                "10%? Double digits! Such a bold move.",
+                "10%? You’re really out here making dreams come true, huh?",
+                "10%? Thanks! I can finally afford the premium ramen.",
+                "10%? I’ll add this to my ‘Someday I’ll Be Rich’ fund.",
+                "10%? This must be what royalty feels like.",
+                "10%? Did someone just win the lottery?",
+                "10%? I’m blown away. Did you mean to add a zero to that?"
+            ],
+            20: [
+                "20%? Wow! Someone's compiling their gratitude.",
+                "20%? Now we're talking! Let me refactor my joy!",
+                "20%? You're a legend! I'll name my next variable after you.",
+                "20%? This is like running a code cleanup and everything works!",
+                "20%? You're optimizing my happiness algorithm!",
+                "20%? This is no debug — it's production-level generosity!",
+                "20%? You're deploying good vibes to my system!",
+                "20%? I'm adding you to my list of contributors!"
+            ]
+        };
+
+            const jokeElement = document.getElementById('joke');
+            const randomJoke = jokes[tip][Math.floor(Math.random() * jokes[tip].length)];
+            jokeElement.textContent = randomJoke || "Thanks! Every byte counts.";
+        }
+    </script>
+</body>
+</html>
